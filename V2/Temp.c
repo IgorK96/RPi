@@ -16,9 +16,34 @@ int main(int argc,char *argv[]){
 	int integer,decimal;
 	char buffer[100];
 	int i,j;
-	
+
 	strcpy(dev_name, devname_head);
 	strcat(dev_name,argv[1]);
-	strcat(dev_name, devname_end);\
-	if() 
+	strcat(dev_name, devname_end);
+
+	if ((fd = open(dev_name, O_RDONLY)) < 0)
+	{
+		perror("open error");
+		exit(1);
+	}
+
+	ret = read(fd, buffer, sizeof(buffer));
+
+	if (ret < 0)
+	{
+	perror("read error");
+	exit(1);
+	}
+
+	tmp1 = strchr(buffer, ch);
+	sscanf(tmp1, "t=%s", tmp2);
+	value = atoi(tmp2);
+	integer = value / 1000;
+	decimal = value % 1000;
+
+	printf("temperature is %d.%d\n", integer,
+	decimal);
+	close(fd);
+	return 0;
+
 }
