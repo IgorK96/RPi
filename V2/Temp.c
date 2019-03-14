@@ -10,7 +10,7 @@ int main(int argc,char *argv[]){
 	char *tmp1,tmp2[10],ch='t';
 	char devname_head[50] = "/sys/devices/w1_bus_master1/28-00000";
 
-	char dev_name_end[10] = "/w1_slave";
+	char devname_end[10] = "/w1_slave";
 	char dev_name[100];
 	long value;
 	int integer,decimal;
