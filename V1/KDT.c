@@ -13,9 +13,9 @@ int main(){
 	pinMode(22,INPUT);
 	pinMode(25,OUTPUT);
 
-	digitalWrite(25,HIGH);
+	//digitalWrite(25,HIGH);
 
-	if(softPwmCreate(28,0,100) != 0) //Omogucava realizaciju PWM na odabranom pinu (pin,inicij V, pwmOpseg)
+	if(softPwmCreate(25,0,100) != 0) //Omogucava realizaciju PWM na odabranom pinu (pin,inicij V, pwmOpseg)
 		exit(2);
 
 	i = 0;
@@ -37,7 +37,7 @@ int main(){
 			printf("i = %d\n",i);
 			fflush(stdout);
 
-			softPwmWrite(28,1);//PWM na pinu i vrednost
+			softPwmWrite(25,i);//PWM na pinu i vrednost
 		}
 		if(!r_value2 && !taster_pritisnut2){
 			taster_pritisnut2 = 1;
@@ -48,7 +48,7 @@ int main(){
 			printf("i = %d\n",i);
 			fflush(stdout);
 
-			softPwmWrite(28,1);
+			softPwmWrite(25,i);
 		}
 		//Cekamo da se taster otpusti
 		if(r_value1) taster_pritisnut1 = 0;
