@@ -41,12 +41,12 @@ int main()
 				
 								delay(400);
 						    sscanf(code,"0000000000%s %*s %s %*s", hex, key);
-                printf("0x");
-                printf(hex);
-                printf(" ");
-                printf(key);
-                printf("\n");
-                fflush(stdout)
+							printf("0x");
+							printf(hex);
+							printf(" ");
+							printf(key);
+							printf("\n");
+							fflush(stdout)
 						}
 						free(code);
 				}
