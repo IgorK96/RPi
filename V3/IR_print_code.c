@@ -28,7 +28,7 @@ int main()
 		exit(1);
  
  		// Setuj PIN kao izlazni
- 	  pinMonde(PIN, OUTPUT);
+ 	pinMode(PIN, OUTPUT);
 		
 		//procitaj /etc/lirc/lirc/lircrc/lircd.conf
 		if(lirc_readconfig(NULL, &config,NULL)==0)
