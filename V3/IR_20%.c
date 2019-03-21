@@ -41,25 +41,25 @@ int main()
 						if(code==NULL) continue; {
 				
 								delay(400);
-						    if (strstr(code,"KEY_VOLUMEUP")){
+						if (strstr(code,"KEY_VOLUMEUP")){
                     
-                    i+= 20;
-                    if(i > 100) i = 100;
+						    i+= 20;
+						    if(i > 100) i = 100;
+
+						    printf("i = %d\n",i);
+					            fflush(stdout);
                     
-                    printf("i = %d\n",i);
-			              fflush(stdout);
+						    softPwmWrite(PIN,i);//PWM na pinu i vrednost
+               					 }else if (strstr(code,"KEY_VOLUMEDOWN")){
                     
-                    softPwmWrite(PIN,i);//PWM na pinu i vrednost
-                }else if (strstr(code,"KEY_VOLUMEDOWN")){
-                    
-                    i-= 20;
-                    if(i < 0) i = 0;
-                    
-                    printf("i = %d\n",i);
-			              fflush(stdout);
-                    
-                    softPwmWrite(PIN,i);//PWM na pinu i vrednost
-                }
+						    i-= 20;
+						    if(i < 0) i = 0;
+
+						    printf("i = %d\n",i);
+	                                            fflush(stdout);
+
+						    softPwmWrite(PIN,i);//PWM na pinu i vrednost
+						}
 						}
 						free(code);
 				}
