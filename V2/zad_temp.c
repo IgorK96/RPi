@@ -42,7 +42,10 @@ int main(void)
 	int cz=0, j=0;
 	struct timespec ts1, ts2; //merenje vremena
 	long czas;
-
+	
+	if(wiringPiSetup() == -1)
+		exit(1);
+	
 	pinMode(25,OUTPUT);
 	
 	log=fopen("log","w");
