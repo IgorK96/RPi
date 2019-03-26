@@ -58,7 +58,7 @@ int main(void)
 	printf("\n\nPočetna Temp = %.3f \xC2\xB0 C", temperatura());
 	while(1)
 	{
-		tren_temp = temperatura;
+		tren_temp = temperatura();
 		j++; //broj iteracija
 
 		clock_gettime(CLOCK_REALTIME, &ts1);
