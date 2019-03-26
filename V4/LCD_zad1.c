@@ -14,7 +14,34 @@ const int D1 = 12;
 const int D2 = 13;
 const int D3 = 6;
 
+double temperatura(void)//očitavanje temperature
+	{
+	FILE *ft;
+	char tekst[100];
+	ft=fopen("/sys/bus/w1/devices/28-00000???????/w1_slave","r");
+
+	if(ft==NULL) return 0;
+
+	int i=0;
+
+	for(i=0;i<22;i++)//samo temperatura
+		fscanf(ft,"%s", tekst);
+
+	fclose(ft);
+
+	//obrisati „t=”
+	for(i=0;i<10;i++) tekst[i]=tekst[i+2];
+
+	int temp=atoi(tekst); //prebaci u double
+	double tem=(double)temp/1000;
+
+	return tem;
+};
+
 int main(){
+  double tren_temp;
+  char temp_s[10]; 
+  
   int lcd_h;
   if (wiringPiSetup() < 0){
     fprintf (stderr, "Greška pri inicijalizaciji: %s\n", strerror (errno)) ;
@@ -23,11 +50,13 @@ int main(){
   lcd_h = lcdInit(2, 16, 4, RS, EN, D0, D1, D2, D3, D0, D1, D2, D3);
   
   lcdPosition(lcd_h, 0,0);
-  lcdPrintf(lcd_h,"Displej sa 16 ch");
+  lcdPrintf(lcd_h,"Trenutna temp: ");
+  while(1){
+    
+    tren_temp = temperatura();
+    sprintf(temp_s,"%f", tren_temp);
+    lcdPosition(lcd_h, 0,1);
+    lcdPrintf(lcd_h, temp_s);
   
-  lcdPosition(lcd_h, 0,1);
-  lcdPrintf(lcd_h, "u 2 reda");
-  
-  delay(2000);
-  lcdClear(lcd_h);
+  delay(400);
 }
