@@ -78,7 +78,7 @@ int main()
               
             				lcdPosition(lcd_h, x,y);
               
-            
+					}
 				free(code);
 				}
 				lirc_freeconfig(config);
