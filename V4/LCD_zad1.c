@@ -58,5 +58,6 @@ int main(){
     lcdPosition(lcd_h, 0,1);
     lcdPrintf(lcd_h, temp_s);
   
-  delay(400);
+    delay(400);
+  }	  
 }
