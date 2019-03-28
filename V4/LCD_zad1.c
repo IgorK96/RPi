@@ -39,7 +39,7 @@ double temperatura(void)//očitavanje temperature
 	double tem=(double)temp/1000;
 
 	return tem;
-};
+}
 
 int main(){
   double tren_temp;
