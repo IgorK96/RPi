@@ -54,7 +54,7 @@ int main(){
   while(1){
     
     tren_temp = temperatura();
-    sprintf(temp_s,"%f", tren_temp);
+    sprintf(temp_s,"%.2f", tren_temp);
     lcdPosition(lcd_h, 0,1);
     lcdPrintf(lcd_h, temp_s);
   
