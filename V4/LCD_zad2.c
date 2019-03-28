@@ -55,32 +55,32 @@ int main()
 					if(code==NULL) continue; {
 				
 						delay(400);
-					if (strstr(code,"KEY_NEXT")){
-             					x += 1;
-           				}else if (strstr(code,"KEY_PREVIOUS")){
-              					x -= 1;
-            				}else if (strstr(code,"KEY_UP")){
-              					y += 1;
-            				}else if (strstr(code,"KEY_DOWN")){
-              					y -= 1;
-            				}
+						if (strstr(code,"KEY_NEXT")){
+             						x += 1;
+           					}else if (strstr(code,"KEY_PREVIOUS")){
+              						x -= 1;
+            					}else if (strstr(code,"KEY_UP")){
+              						y += 1;
+            					}else if (strstr(code,"KEY_DOWN")){
+              						y -= 1;
+            					}
             
-            				if(x == 16){
-                				x = 0;
-            				}else if(x == -1){
-                				x = 15;
-            				}
+            					if(x == 16){
+                					x = 0;
+            					}else if(x == -1){
+                					x = 15;
+            					}
              
-            				if(y == 2){
-                				y = 0;
-            				}else if( y == -1){
-                				y = 1;
-            				}	
-              				delay(300);
-            				lcdPosition(lcd_h, x,y);
-              
+            					if(y == 2){
+                					y = 0;
+            					}else if( y == -1){
+                					y = 1;
+            					}	
+              					delay(300);
+            					lcdPosition(lcd_h, x,y);
+						
 					}
-				free(code);
+					free(code);
 				}
 				lirc_freeconfig(config);
 		}
