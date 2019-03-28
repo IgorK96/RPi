@@ -3,6 +3,7 @@
 
 //startuj lircs sudo /etc/init.d/lircd start
 
+//#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
