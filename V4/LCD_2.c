@@ -84,8 +84,7 @@ void memory(void){
       }
       else
       {
-        printf("Otvaranje fajla \"/proc/meminfo\" nije
-        uspelo!\n");
+        printf("Otvaranje fajla \"/proc/meminfo\" nije uspelo!\n");
       }
 }
    void volume(void)
