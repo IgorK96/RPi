@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include <signal.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -99,10 +100,11 @@ void memory(void){
 
 void scrollText(void)
 {
+  int j = 0;
   int i,n;
   int h;
   int tempSpace = 0;
-  char scrollPadding[] = " ";
+  char scrollPadding[] = "                ";
   int messageLength = strlen (scrollPadding) +
   strlen(message);
   for (n=0;n<messageLength;n++){
