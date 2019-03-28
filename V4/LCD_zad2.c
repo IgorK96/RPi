@@ -76,7 +76,7 @@ int main()
             				}else if( y == -1){
                 				y = 1;
             				}	
-              
+              				delay(300);
             				lcdPosition(lcd_h, x,y);
               
 					}
