@@ -33,7 +33,7 @@ int main()
     lcd_h = lcdInit(2, 16, 4, RS, EN, D0, D1, D2, D3, D0, D1, D2, D3);
 		
     lcdPosition(lcd_h, x,y);
-    lcdCursor();
+    lcdCursor(lcd_h,1);
     
     struct lirc_config *config;
 		char *code;
