@@ -91,7 +91,7 @@ void memory(void){
   int i;
   lcdPosition (lcd, 9,1);
   lcdPuts (lcd, ":Volume");
-  for (i = 0; i < 8; i++){
+  for (i = 0; i < 3; i++){
     lcdPosition (lcd, i, 1);
     lcdPutchar (lcd, i);
     usleep(400000);
