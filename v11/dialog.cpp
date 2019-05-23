@@ -14,7 +14,7 @@ Dialog::Dialog(QWidget *parent) :
     fd = wiringPiI2CSetup(PCF8591);
     rtc=wiringPiI2CSetup(0x51);
     tmr = new QTimer(this);
-    connect(tmr,SIGNAL(timeout()),this,SLOT(temperature()));
+    connect(tmr,SIGNAL(timeout()),this,SLOT(senzori()));
     tmr -> start(1000);
     ui->dial->setDisabled(true);
     ui->verticalScrollBar->setDisabled(true);
@@ -27,7 +27,7 @@ Dialog::~Dialog()
 }
 
 
-void Dialog::temperature()
+void Dialog::senzori()
 {
         FILE *ft;
         char tekst[100];
