@@ -34,7 +34,7 @@ public:
 
 private slots:
     void P8563_Readtime();
-    void temperature();
+    void senzori();
 
 private:
     Ui::Dialog *ui;
