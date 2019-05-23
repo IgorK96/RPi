@@ -1,5 +1,5 @@
-#include "dialog.h"
-#include "ui_dialog.h"
+#include "dialog.h"  //DEFINISI void temperature(); u headeru
+#include "ui_dialog.h" 
 
 Dialog::Dialog(QWidget *parent) :
 	QMainWindow(parent),
@@ -15,7 +15,7 @@ Dialog::~Dialog()
 	delete ui;
 }
 
-Dialog::temperature()
+void Dialog::temperature()
 {
 	FILE *ft;
 	char tekst[100];
