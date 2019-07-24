@@ -35,7 +35,6 @@ char txt_hours[4];
 int main()
 {	
 	if(wiringPiSetup() == -1) exit(1);
-	//wiringPiSetup(); //Proveri dal radi !!! #1
 	pinMode (SENSOR, INPUT);
 	pinMode (BUTTON, INPUT);
 	pullUpDnControl(BUTTON, PUD_UP);
@@ -49,17 +48,14 @@ int main()
 	int dec_seconds;
 	int enable = 0;
 
-	//if(wiringPiSetup() == -1) exit(1); //Proveri dal radi !!! #1
 
 	lcd_h = lcdInit(2, 16, 4, RS, EN, D0, D1, D2, D3, D0, D1, D2, D3);
-	//lcdPrintf(lcd_h,"Vreme detekcije: ");
 
 	fd = wiringPiI2CSetup(RTC);
-	wiringPiI2CWriteReg8(fd, HOU, 0x25);
+	wiringPiI2CWriteReg8(fd, HOU, 0x23);
 	wiringPiI2CWriteReg8(fd, MIN, 0x59);
 	wiringPiI2CWriteReg8(fd, SEC, 0x00);
 
-	//wiringPiSetup();// Proveri dal radi !!! #1
 	while(1)
 	{	if(enable == 0){
 		sensor_value = digitalRead(SENSOR);
@@ -71,7 +67,7 @@ int main()
 			dec_seconds = seconds;
 		}else
 			{
-				printf("Vrednost na senzoru: %d ",sensor_value);
+				//printf("Vrednost na senzoru: %d ",sensor_value);
 				hours = changeHexToInt(wiringPiI2CReadReg8(fd, HOU)& 0x3f);  //Treba ograniciti na 24 nekako ?
 				minutes = changeHexToInt(wiringPiI2CReadReg8(fd, MIN)& 0x7f);
 				seconds = changeHexToInt(wiringPiI2CReadReg8(fd, SEC)& 0x7f);
