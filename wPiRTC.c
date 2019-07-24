@@ -43,9 +43,9 @@ int main()
 	int button_value = 1;
 	int lcd_h;
 	int seconds_tmp = 1;
-	int dec_hours;
-	int dec_minutes;
-	int dec_seconds;
+	int detc_hours;
+	int detc_minutes;
+	int detc_seconds;
 	int enable = 0;
 
 
@@ -62,9 +62,9 @@ int main()
 		if(sensor_value == 1)
 		{
 			enable = 1;
-			dec_hours = hours;
-			dec_minutes = minutes;
-			dec_seconds = seconds;
+			detc_hours = hours;
+			detc_minutes = minutes;
+			detc_seconds = seconds;
 		}else
 			{
 				//printf("Vrednost na senzoru: %d ",sensor_value);
@@ -94,9 +94,9 @@ int main()
 			}
 		}else
 			{	
-				sprintf(txt_hours, "%d", dec_hours);
-				sprintf(txt_minutes, "%d", dec_minutes);
-				sprintf(txt_seconds, "%d", dec_seconds);
+				sprintf(txt_hours, "%d", detc_hours);
+				sprintf(txt_minutes, "%d", detc_minutes);
+				sprintf(txt_seconds, "%d", detc_seconds);
 				
 				lcdPosition(lcd_h, 0, 0);
 				lcdPrintf(lcd_h, "MOVMENT DETECTED !");
