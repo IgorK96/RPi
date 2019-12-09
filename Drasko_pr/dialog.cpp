@@ -110,7 +110,13 @@ void Dialog::on_pushButton_9_clicked()
 void Dialog::on_pushButton_clicked()
 {
     OGpass.clear();
+    if(ui->textEdit->toPlainText().length() < 4)
+    {
+        
+    }
+    ui->textEdit->toPlainText().length()
     OGpass = ui->textEdit->toPlainText();
+    
     ui->textEdit->clear();
     reset = 1;
 }
