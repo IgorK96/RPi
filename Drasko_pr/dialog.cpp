@@ -112,13 +112,17 @@ void Dialog::on_pushButton_clicked()
     OGpass.clear();
     if(ui->textEdit->toPlainText().length() < 4)
     {
-        
+       ui->textEdit->clear();  
+        //show
     }
-    ui->textEdit->toPlainText().length()
-    OGpass = ui->textEdit->toPlainText();
+    else
+    {
+        OGpass = ui->textEdit->toPlainText();
+        ui->textEdit->clear();
+        reset = 1;
+        //hide
+    }
     
-    ui->textEdit->clear();
-    reset = 1;
 }
 void Dialog::on_textEdit_textChanged()
 {
@@ -234,6 +238,7 @@ void Dialog::HC_SR04_READ()
                 enable = 0;
                 reset = 0;
                 ui->pushButton->hide();
+                //hide
                 ui->textEdit_2->show();
                 ui->label->show();
                 ui->textEdit_3->show();
