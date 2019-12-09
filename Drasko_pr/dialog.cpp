@@ -8,6 +8,7 @@ Dialog::Dialog(QWidget *parent) :
     ui->setupUi(this);
     setup_pins();
     ui->pushButton->hide();
+    ui->label_4->hide();
     tmr = new QTimer(this);
     connect(tmr,SIGNAL(timeout()),this,SLOT(HC_SR04_READ()));
     tmr -> start(1000);
@@ -112,17 +113,17 @@ void Dialog::on_pushButton_clicked()
     OGpass.clear();
     if(ui->textEdit->toPlainText().length() < 4)
     {
-       ui->textEdit->clear();  
-        //show
+        ui->textEdit->clear();
+        ui->label_4->show();
     }
     else
     {
         OGpass = ui->textEdit->toPlainText();
         ui->textEdit->clear();
         reset = 1;
-        //hide
+        ui->label_4->hide();
     }
-    
+
 }
 void Dialog::on_textEdit_textChanged()
 {
@@ -238,7 +239,7 @@ void Dialog::HC_SR04_READ()
                 enable = 0;
                 reset = 0;
                 ui->pushButton->hide();
-                //hide
+                ui->label_4->hide();
                 ui->textEdit_2->show();
                 ui->label->show();
                 ui->textEdit_3->show();
