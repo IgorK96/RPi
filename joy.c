@@ -87,7 +87,7 @@ int main(){
           dx = x1_value - center_x1_pos;
           dy = y1_value - center_y1_pos;
 	  rads = (atan2(-dy, dx))*180/PI;
-	  if(sw1_value < 10){
+	  if(sw1_value < 20){
 		delay(50);
 		if(control == 1){
 			control = 0;}
