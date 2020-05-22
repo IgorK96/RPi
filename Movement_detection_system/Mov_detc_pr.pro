@@ -9,7 +9,7 @@ QT       += core gui
 LIBS += -L/usr/local/lib -lbcm2835
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Drasko_pr
+TARGET = Mov_detc
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
